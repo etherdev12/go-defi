@@ -1,0 +1,13 @@
+
+# misc
+*.log
+release
+files
+go-defi
+go-defi.exe
+
+# regex
+**/*.db
+abifile.txt
+
+outfile.txt

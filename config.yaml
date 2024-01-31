@@ -1,0 +1,9 @@
+---
+database:
+
+blockchain:
+  provider_type: direct
+  network: mainnet
+  rpc: https://eth.llamarpc.com
+
+logger:
