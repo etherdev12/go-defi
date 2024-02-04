@@ -7,32 +7,32 @@ import (
 
 	"github.com/etherdev12/go-defi/bclient"
 	"github.com/etherdev12/go-defi/config"
-	"github.com/pkg/errors"
-)
-
-var (
-	// Version denotes the compile time build version
-	Version string
 )
 
 func main() {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
-	cfg, err := config.LoadConfig("config.yaml")
-	if err != nil {
-		log.Fatal(errors.Wrap(err, "load config"))
+	// cfg, err := config.LoadConfig("config.yaml")
+	cfg := &config.Config{
+		Blockchain: config.Blockchain{
+			ProviderType: "direct",
+			Network:      "mainnet",
+			RPC:          "https://eth.llamarpc.com",
+		},
 	}
 	client, err := cfg.EthClient(ctx)
 	if err != nil {
-		log.Fatal(errors.Wrap(err, "eth client"))
+		log.Fatal(err)
 	}
 	bc, err := bclient.NewClient(ctx, client)
 	if err != nil {
-		log.Fatal(errors.Wrap(err, "new client"))
+		log.Fatal(err)
 	}
+
+	// Get price on uniswap
 	price, err := bc.EthDaiPrice()
 	if err != nil {
-		log.Fatal(errors.Wrap(err, "get price"))
+		log.Fatal(err)
 	}
 	fmt.Println(price)
 }

