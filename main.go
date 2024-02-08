@@ -16,7 +16,6 @@ func main() {
 	cfg := &config.Config{
 		Blockchain: config.Blockchain{
 			ProviderType: "direct",
-			Network:      "mainnet",
 			RPC:          "https://eth.llamarpc.com",
 		},
 	}
