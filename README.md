@@ -9,7 +9,6 @@ A golang sdk for working with DeFi protocols and general utilities for working w
 * database
 * sushiswap
 * uniswap
-* testenv
 * utils
 
 

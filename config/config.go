@@ -9,7 +9,6 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/etherdev12/go-defi/testenv"
 	"github.com/etherdev12/go-defi/utils"
 	"github.com/etherdev12/go-rpc/rpc"
 	"github.com/ethereum/go-ethereum/crypto"
@@ -211,8 +210,6 @@ func (c *Config) EthClient(ctx context.Context) (utils.Blockchain, error) {
 		err error
 	)
 	switch c.Blockchain.ProviderType {
-	case "simulated":
-		return testenv.NewBlockchain(ctx)
 	case "infura":
 		transport := ""
 		path := ""
