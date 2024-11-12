@@ -3,7 +3,7 @@ module github.com/etherdev12/go-defi
 go 1.21.3
 
 require (
-	github.com/etherdev12/go-rpc v0.1.2
+	github.com/etherdev12/go-rpc v0.1.3
 	github.com/ethereum/go-ethereum v1.14.6
 	github.com/pkg/errors v0.9.1
 	github.com/shopspring/decimal v1.4.0

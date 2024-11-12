@@ -48,8 +48,8 @@ github.com/decred/dcrd/crypto/blake256 v1.0.1 h1:7PltbUIQB7u/FfZ39+DGa/ShuMyJ5il
 github.com/decred/dcrd/crypto/blake256 v1.0.1/go.mod h1:2OfgNZ5wDpcsFmHmCK5gZTPcCXqlm2ArzUIkw9czNJo=
 github.com/decred/dcrd/dcrec/secp256k1/v4 v4.3.0 h1:rpfIENRNNilwHwZeG5+P150SMrnNEcHYvcCuK6dPZSg=
 github.com/decred/dcrd/dcrec/secp256k1/v4 v4.3.0/go.mod h1:v57UDF4pDQJcEfFUCRop3lJL149eHGSe9Jvczhzjo/0=
-github.com/etherdev12/go-rpc v0.1.2 h1:+MaWQFHOFe7p2wlj0tCXxSNdxNSqOFkvSyUhLu7flQc=
-github.com/etherdev12/go-rpc v0.1.2/go.mod h1:75Mqc1d5Z6QLCGmTvOYGFmvnAley4aCk672/o6uUJ3A=
+github.com/etherdev12/go-rpc v0.1.3 h1:o/eE1/Uu3MPGVGYGdwvMYu36ftB6BCbm8oaBCrSoB6k=
+github.com/etherdev12/go-rpc v0.1.3/go.mod h1:75Mqc1d5Z6QLCGmTvOYGFmvnAley4aCk672/o6uUJ3A=
 github.com/ethereum/c-kzg-4844 v1.0.2 h1:8tV84BCEiPeOkiVgW9mpYBeBUir2bkCNVqxPwwVeO+s=
 github.com/ethereum/c-kzg-4844 v1.0.2/go.mod h1:VewdlzQmpT5QSrVhbBuGoCdFJkpaJlO1aQputP83wc0=
 github.com/ethereum/go-ethereum v1.14.6 h1:ZTxnErSopkDyxdvB8zW/KcK+/AVrdil/TzoWXVKaaC8=
